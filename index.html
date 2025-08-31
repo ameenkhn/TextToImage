@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Text-to-Image Generator</title>
+  <meta name="theme-color" content="#1f2430">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <div class="logo">✨</div>
+      <div class="titles">
+        <h1 class="app-title">Text‑to‑Image</h1>
+        <p class="app-subtitle">Turn imagination into visuals</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel prompt-panel" aria-label="Prompt section">
+      <div class="prompt-grid">
+        <div class="field">
+          <label for="prompt">Prompt</label>
+          <input type="text" id="prompt" placeholder="Astronaut riding a horse, cinematic, highly detailed">
+        </div>
+
+        <div class="field">
+          <label for="negativePrompt">Negative (optional)</label>
+          <input type="text" id="negativePrompt" placeholder="blurry, low quality, watermark">
+        </div>
+
+        <div class="row">
+          <div class="field compact">
+            <label for="size">Size</label>
+            <select id="size">
+              <option value="768x768">768 × 768</option>
+              <option value="1024x1024" selected>1024 × 1024</option>
+              <option value="1024x576">1024 × 576</option>
+              <option value="576x1024">576 × 1024</option>
+            </select>
+          </div>
+
+          <div class="actions">
+            <button id="generateBtn" class="btn" aria-live="polite">
+              <span class="btn-label">Generate</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div id="loader" class="loader hidden" role="status" aria-live="polite" aria-label="Generating image"></div>
+    </section>
+
+    <section class="panel image-panel" aria-label="Result">
+      <div class="image-container hidden" id="imageContainer">
+        <img id="resultImage" src="" alt="Generated image preview">
+      </div>
+      <div class="placeholder" id="placeholder">
+        <div class="placeholder-icon">🖼️</div>
+        <p>Enter a prompt and click Generate to create an image.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <div class="foot-left">
+      <span class="dot green"></span> Ready
+    </div>
+    <div class="foot-right">
+      Built by Ameen Khan <span class="heart">❤</span> 
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
