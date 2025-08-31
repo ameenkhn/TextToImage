@@ -1,4 +1,4 @@
-const HF_TOKEN = "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"; // <-- paste your Hugging Face token here
+const HF_TOKEN = ""; // <-- paste your Hugging Face token here
 const API_URL = "https://router.huggingface.co/nebius/v1/images/generations";
 const el = {
   prompt: document.getElementById("prompt"),
